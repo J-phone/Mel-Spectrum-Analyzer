@@ -36,15 +36,7 @@ var settings = {spec_type: 1, plot_type: 1, plot_len: 90, color_scheme: 1, f_min
 
 var bin_Hz = [];
 var skl = 3;
-/*
-document.querySelector('#mic_button').addEventListener('click', function() 
-{
-    
-    if(audioPlaying) stop_playing();
-    mic_play();
-    
-});
-*/
+
 document.querySelector('#soprano_button').addEventListener('click', function(e)
 {
     if(audioPlaying) stop_playing();
@@ -220,50 +212,6 @@ function dnd_play(dnd_file)
     });
 }
 
-/*
-function mic_play()
-{
-    if(audioPlaying) return;
-
-    let micAudioContext;
-    try
-    {
-        micAudioContext = new AudioContext();
-    }
-    catch (e)
-    {
-        alert('Web Audio API is not supported in this browser');
-    }
-    
-    //sourceNode = micAudioContext.createBufferSource();
-    micAudioContext.audioWorklet.addModule('assets/js/analyzernode.js').then(function() {
-
-        workletNode = new AudioWorkletNode(micAudioContext, 'spectrum-processor');
-        workletNode.port.onmessage = (e) => workletMsgRx(e.data);
-
-        workletNode.port.postMessage(settings);
-        
-        document.getElementById('msg').textContent = "Connecting mic...";
-
-        createMicSrcFrom(micAudioContext).then((status) => {
-            
-            //sourceNode.connect(micAudioContext.destination);
-            sourceNode.connect(workletNode);
-            workletNode.connect(micAudioContext.destination);
-            PlayMode = 3;
-            audioPlaying = true;
-            document.getElementById('msg').textContent = "Streaming from mic";
-        }).catch((err)=>{
-            console.log(err);
-        })
-        
-        
-    }).catch(function(err) {
-        console.log('AudioWorklet loading failed: ' + err);
-    });
-}
-
-*/
 
 function offline_play()
 {
