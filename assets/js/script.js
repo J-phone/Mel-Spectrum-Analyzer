@@ -36,7 +36,7 @@ var settings = {spec_type: 1, plot_type: 1, plot_len: 90, color_scheme: 1, f_min
 
 var bin_Hz = [];
 var skl = 3;
-
+/*
 document.querySelector('#mic_button').addEventListener('click', function() 
 {
     
@@ -44,7 +44,7 @@ document.querySelector('#mic_button').addEventListener('click', function()
     mic_play();
     
 });
-
+*/
 document.querySelector('#soprano_button').addEventListener('click', function(e)
 {
     if(audioPlaying) stop_playing();
@@ -220,7 +220,7 @@ function dnd_play(dnd_file)
     });
 }
 
-
+/*
 function mic_play()
 {
     if(audioPlaying) return;
@@ -263,7 +263,7 @@ function mic_play()
     });
 }
 
-
+*/
 
 function offline_play()
 {
